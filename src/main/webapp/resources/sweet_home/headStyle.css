@@ -1,0 +1,11 @@
+.header_container{
+  width: inherit;
+  background-color: #151515;
+}
+
+.head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #202020;
+}

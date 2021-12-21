@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/register_style.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/styles.css"/>
+</head>
+<body>
+  <header>
+    <a href="http://localhost:9877/Kurs_war/"><img src="http://localhost:9877/Kurs_war/resources/${theme}/kurs_logo.png" alt="err"></a>
+  </header>
+  <main>
+    <form class="login_box" action="register" method="post">
+      <h1 id="title">Register</h1>
+      <h6 id="massage_m">${massage}</h6>
+      <input type="text" class="input_text" name="login" id="login" value="username"
+      title="only numbers and Latin letters" pattern="[a-zA-Z\d]*" maxlength="8"/>
+      <input type="text" class="input_text" name="password" id="password" value="password"
+      title="only numbers and Latin letters" pattern="[a-zA-Z\d]*" maxlength="8"/>
+      <input type="submit" name="" value="sign up" id="login_button"/>
+    </form>
+  </main>
+  <footer>
+    <a href="https://github.com/infernoSSS/TrackBagG">
+      <img id="git_logo" src="http://localhost:9877/Kurs_war/resources/${theme}/github.png" width="50" height="50"/>
+    </a>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/bug_style.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/headStyle.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/styles.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/theme.css"/>
+</head>
+<body>
+  <header>
+    <div class="header_container">
+      <div class="head">
+        <a href="http://localhost:9877/Kurs_war/login">
+          <img id="logo" src="http://localhost:9877/Kurs_war/resources/${theme}/kurs_logo.png" width="185" height="50"/>
+        </a>
+        <a href="http://localhost:9877/Kurs_war/project?name_field=${project_name}&uuid=${uuid}&go=Go">
+          <span class="proj_title">${project_name}</span>
+        </a>
+        <div id="login_info">
+          <a href="http://localhost:9877/Kurs_war/usersarea">
+            <span class="proj_title">login as ${username}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <form class="theme_box" action="bug" method="get">
+    <input type="hidden" name="uuid" value="${uuid}">
+    <input type="hidden" name="bug_id" value="${bug_id}">
+    <button title="change theme" id="theme_button" type="submit" name="theme" value="theme"></button>
+  </form>
+  <main>
+    <div class="bug_box">
+      <div class="bug_status"> <!--open/closed & if(closed):bug/ficha-->
+        Bug-${bug_number} ${bug_status}
+      </div>
+      <form class="problem_and_solution_box" id="bug_form" name="bug_form" action="bug" method="post">
+        <input type="hidden" name="post_action" value="bug">
+        <input type="hidden" name="bug_id" value="${bug_id}">
+        <input type="hidden" name="uuid" value="${uuid}">
+        <div id="report" class="bug_fields">
+            <span class="ne_pridumal">Date:</span>
+            <span class="bug_field">${report_date}</span>
+            <span class="ne_pridumal">Reported by:</span>
+            <span class="bug_field">${reported_by}</span>
+          <textarea class="bug_field" id="bug_description" name="description"
+           rows="8" cols="80" placeholder="description"
+           title="only numbers, Latin letters and spaces" pattern="[a-zA-Z\d\s]*">${description}</textarea>
+        </div>
+      </form>
+    </div>
+    <form style="visibility: ${hidden_answers_hud};" class="my_solution_box" action="bug" method="post" >
+      <input type="hidden" name="username" value="${username}">
+      <input type="hidden" name="bug_id" value="${bug_id}">
+      <input type="hidden" name="uuid" value="${uuid}">
+      <textarea class="my_solution" name="answer" rows="4" cols="60"
+      title="only numbers, Latin letters and spaces" pattern="[a-zA-Z\d\s]*" placeholder="my solution"></textarea>
+      <div class="bug_or_ficha">
+        <div class="">
+          <input type="radio" name="bug_or_ficha" value="bug" checked>
+          <label>Bug</label>
+        </div>
+        <div class="">
+          <input type="radio" name="bug_or_ficha" value="ficha">
+          <label>Ficha</label>
+        </div>
+      </div>
+      <button class="send_button" type="submit" name="button" value="send"></button>
+    </form>
+    <div class="solutions_box">
+      ${answers}
+    </div>
+  </main>
+  <aside>
+    <input class="bug_button" ${bug_post_hidden} id="post" title="post" type="submit" name="button" value="post" form="bug_form">
+    <input class="bug_button" ${bug_edit_hidden} id="edit" title="edit" type="submit" name="button" value="edit" form="bug_form">
+    <input class="bug_button" ${bug_delete_hidden} id="delete" title="delete" type="submit" name="button" value="delete"
+           form="bug_form" onclick="return confirm()">
+  </aside>
+  <footer>
+    <a href="https://github.com/infernoSSS/TrackBagG/">
+      <img id="git_logo" src="http://localhost:9877/Kurs_war/resources/${theme}/github.png" width="50" height="50"/>
+    </a>
+  </footer>
+</body>
+
+<script>
+function confirm() {
+  if (confirm("u sure?")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+</script>
+
+</html>

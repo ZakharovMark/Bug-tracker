@@ -1,0 +1,26 @@
+<form class="solution" action="bug" method="post">
+    <input type="hidden" name="id" value="${id}">
+    <input type="hidden" name="bug_id" value="${bug_id}">
+    <div class="solution_head">
+        <div class="solution_info_box">
+            <input type="text" class="solution_field" readonly name="autor" value="Solution by: ${autor}">
+            <input type="text" class="solution_field" readonly name="date" value="Date: ${date}">
+			<input type="text" class="solution_field" ${readonly} name="bug_or_ficha" value="${bug_or_ficha}"
+      title="bug/ficha" pattern="^bug$|^ficha$?">
+            <p class="solution_title" ${solution_title_hidden}>SOLUTION-${bug_or_ficha}</p>
+        </div>
+        <div class="solution_buttons_box">
+            <button class="solution_buttons" ${hidden_solution_choose} id="solution_button_edit" type="submit"
+                    name="answer_button" value="edit_solution"></button>
+            <button class="solution_buttons" ${hidden_solution_choose} id="solution_button_delete" type="submit"
+                    name="answer_button" value="delete_solution"></button>
+            <button class="solution_buttons" ${hidden_choose_as_true_solution} id="solution_button_choosed"
+                    type="submit" name="answer_button" value="change"></button>
+        </div>
+    </div>
+    <div class="solution_body">
+    <textarea class="solution_text" name="description"
+              cols="60" ${readonly}
+              title="only numbers, Latin letters and spaces" pattern="[a-zA-Z\d\s]*">${description}</textarea>
+    </div>
+</form>

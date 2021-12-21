@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/project_page.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/styles.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/theme.css"/>
+</head>
+<body>
+<header>
+  <div class="header_container">
+    <div class="head">
+      <a href="http://localhost:9877/Kurs_war/login">
+        <img id="logo" src="http://localhost:9877/Kurs_war/resources/${theme}/kurs_logo.png" width="185" height="50"/>
+      </a>
+      <a href="http://localhost:9877/Kurs_war/project?name_field=${project_name}&uuid=${uuid}&go=Go">
+      <span class="proj_title">${project_name}</span>
+      </a>
+      <div id="login_info">
+        <a href="http://localhost:9877/Kurs_war/usersarea">
+          <span class="proj_title">login as ${username}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="switch">
+      <form class="" id="page" action="project" method="get">
+        <ul id="switch_ul">
+          <input type="hidden" name="name_field" value="${project_name}">
+          <input type="hidden" name="open_closed" value="${open_closed}">
+          <input type="hidden" name="on_page" value="${on_page}">
+          <input type="hidden" name="page" value="${page}">
+          <input type="hidden" name="uuid" value="${uuid}">
+          <li><button id="${choose_open}" class="switch_element" name="button" value="open">Open</button></li>
+          <li><button id="${choose_closed}" class="switch_element" name="button" value="closed">Closed</button></li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="theme_box">
+  <button title="change theme" id="theme_button" type="submit" name="theme" value="theme" form="page"></button>
+</div>
+
+<div class="on_page">
+  <label class="on_page_elem">Bugs on page</label>
+  <button form="page" id="${choosed_ope_10}" class="on_page_elem_b" type="submit" name="button" value="10">10</button>
+  <button form="page" id="${choosed_ope_20}" class="on_page_elem_b" type="submit" name="button" value="20">20</button>
+  <button form="page" id="${choosed_ope_30}" class="on_page_elem_b" type="submit" name="button" value="30">30</button>
+</div>
+
+<aside class="create panel">
+  <form class="create_form" action="bug" method="get">
+    <input type="hidden" name="uuid" value="${uuid}">
+    <input type="submit" title="post new report" id="create_button" value="">
+  </form>
+  <form class="invite" action="invite" method="post">
+    <input type="hidden" name="uuid" value="${uuid}">
+    <input type="hidden" name="project_name" value="${project_name}">
+    <input type="submit" title="invite user" id="invite_button" value="">
+  </form>
+</aside>
+
+<main>
+  <div class="container">
+    ${content}
+  </div>
+</main>
+
+<div class="change_page">
+  <button form="page" id="prev" class="on_page_elem_b" type="submit" name="button" value="prev">prev</button>
+  <span class="on_page_elem_b" id="page_number">${page}</span>
+  <button form="page" id="next" class="on_page_elem_b" type="submit" name="button" value="next">next</button>
+</div>
+
+<footer>
+  <a href="https://github.com/infernoSSS/TrackBagG">
+    <img id="git_logo" src="http://localhost:9877/Kurs_war/resources/${theme}/github.png" width="50" height="50"/>
+  </a>
+</footer>
+
+</body>
+</html>

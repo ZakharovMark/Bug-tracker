@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/pa.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/headStyle.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/styles.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/theme.css"/>
+</head>
+<body>
+<header>
+  <div class="header_container">
+    <div class="head">
+      <a href="http://localhost:8080/Kurs_war/login">
+        <img id="logo" src="http://localhost:9877/Kurs_war/resources/${theme}/kurs_logo.png" width="185" height="50"/>
+      </a>
+      <div id="login_info">
+        <span class="proj_title">login as ${username}</span>
+      </div>
+    </div>
+</header>
+<form class="theme_box" action="usersarea" method="get">
+  <button title="change theme" id="theme_button" type="submit" name="theme" value="theme"></button>
+</form>
+<aside class="side_panel">
+  <div class="label">
+    <p>Create new</p>
+    Choose project name:
+  </div>
+  <form class="project_link_container" id = "tocken" action="usersarea" method="post">
+    <input class="field" type="text" style="width:10vw; background:none;"
+     name="name_field" id="name" rows="8" cols="80"
+     title="only numbers and Latin letters" pattern="[a-zA-Z\d]*"></input>
+    <input type="submit" name="register_new_project" value="Go" class="goButton">
+  </form>
+</aside>
+<main>
+  <div class="main_container">
+    ${content}
+  </div>
+</main>
+<footer>
+  <a href="https://github.com/infernoSSS/TrackBagG">
+    <img id="git_logo" src="http://localhost:9877/Kurs_war/resources/${theme}/github.png" width="50" height="50"/>
+  </a>
+</footer>
+</body>
+
+</html>

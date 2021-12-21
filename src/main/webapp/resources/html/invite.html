@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bug tracker</title>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/headStyle.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/styles.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/invite.css"/>
+  <link rel="stylesheet" href="http://localhost:9877/Kurs_war/resources/${theme}/theme.css"/>
+</head>
+<body>
+  <header>
+    <div class="header_container">
+      <div class="head">
+        <a href="http://localhost:9877/Kurs_war/login">
+          <img id="logo" src="http://localhost:9877/Kurs_war/resources/${theme}/kurs_logo.png" width="185" height="50"/>
+        </a>
+        <a href="http://localhost:9877/Kurs_war/project?name_field=${project_name}&uuid=${uuid}&go=Go">
+          <span class="proj_title">${project_name}</span>
+        </a>
+        <div id="login_info">
+          <a href="http://localhost:9877/Kurs_war/usersarea">
+            <span class="proj_title">login as ${username}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <form class="theme_box" action="invite" method="post">
+    <input type="hidden" name="uuid" value="${uuid}">
+    <input type="hidden" name="project_name" value="${project_name}">
+    <button title="change theme" id="theme_button" type="submit" name="theme" value="theme"></button>
+  </form>
+  <main>
+    <span class="invite_label">Invite link:</span>
+    <div class="invite_container">
+      <input type="text" readonly name="invite" id="invite_id" value="${invite_ref}">
+      <button id="copy_button" title="copy" onclick="copyF()" type="button" name="button"></button>
+    </div>
+  </main>
+
+  <script>
+    function copyF(){
+      let copyText = document.getElementById("invite_id");
+      copyText.select();
+      document.execCommand("copy");
+    }
+  </script>
+
+  <footer>
+    <a href="https://github.com/infernoSSS/TrackBagG">
+      <img id="git_logo" src="http://localhost:9877/Kurs_war/resources/${theme}/github.png" width="50" height="50"/>
+    </a>
+  </footer>
+</body>
+
+</html>

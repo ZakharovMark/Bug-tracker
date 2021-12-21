@@ -1,0 +1,49 @@
+main{
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.proj_title{
+  color: #f8981c;
+  height: 4vh;
+  /*margin-right: 5vw;*/
+  font-size: 3vh;
+}
+
+#login_info{
+  color: #f8981c;
+  margin: 10px;
+}
+
+.invite_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.invite_label{
+  font-size: 20px;
+  color: #f8981c;
+}
+
+#invite_id{
+  width: 50vw;
+  height: 50px;
+  background-color: black;
+  border: 2px solid silver;
+  border-radius: 50px;
+  color: #f8981c;
+  font-size: 20px;
+}
+
+#copy_button{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  font-size: 0px;
+  background: url("http://localhost:8080/Kurs_war/resources/sweet_home/edit.png") no-repeat center left;
+  background-size: 50px 50px;
+}
